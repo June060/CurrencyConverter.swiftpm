@@ -26,9 +26,3 @@ struct flipcard: View {
             
         }
     }
-
-    struct ExampleCard_Previews: PreviewProvider {
-        static var previews: some View {
-flipcard()
-        }
-    }
