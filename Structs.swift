@@ -1,15 +1,14 @@
 import SwiftUI
 
 struct term1  {
-    var termId:ObjectIdentifier
+    var termId:Int
     var term1String:String
 }
 
 struct definition1 {
-    var definitionId:ObjectIdentifier
+    var definitionId:Int
     var definitionString:String
 }
-
 
 struct pairs {
     var term2:term1
@@ -17,7 +16,7 @@ struct pairs {
 }
 
 struct set1: Identifiable {
-    var id: ObjectIdentifier
+    var id: Int
     var pairs:[pairs]
     var desription:String
 }
