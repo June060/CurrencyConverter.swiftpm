@@ -17,6 +17,7 @@ struct pairs {
 }
 
 struct set1 {
+    var name:String
     var pairs:[pairs]
     var desription:String
     var setId:Int

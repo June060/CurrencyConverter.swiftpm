@@ -9,26 +9,34 @@ import Foundation
 import SwiftUI
 
 struct flipcard: View {
-        @State var flipped = false // state variable used to update the card
-        
-        var body: some View {
+    
+    @State var flipped = false // state variable used to update the card
+    
+    var body: some View {
+        ZStack{
             RoundedRectangle(cornerRadius: 20)
                 .foregroundColor(self.flipped ? .red : .blue) // change the card color when flipped
                 .padding()
                 .rotation3DEffect(self.flipped ? Angle(degrees: 180): Angle(degrees: 0), axis: (x: CGFloat(0), y: CGFloat(10), z: CGFloat(0)))
-                .animation(.default) // implicitly applying animation
+                .animation(.default)
                 .onTapGesture {
                     // explicitly apply animation on toggle (choose either or)
                     //withAnimation {
-                        self.flipped.toggle()
+                    self.flipped.toggle()
                     //}
-            }
-            
+                }
+            Text(flipped ? "Hi" : "Bye")
+                .rotation3DEffect(self.flipped ? Angle(degrees: 0): Angle(degrees: 0), axis: (x: CGFloat(0), y: CGFloat(10), z: CGFloat(0)))
+                .animation(.default)
+                .onTapGesture {
+                    self.flipped.toggle()
+                }
         }
     }
+}
 
-    struct ExampleCard_Previews: PreviewProvider {
-        static var previews: some View {
-flipcard()
-        }
+struct ExampleCard_Previews: PreviewProvider {
+    static var previews: some View {
+        flipcard()
     }
+}

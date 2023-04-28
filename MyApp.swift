@@ -19,7 +19,7 @@ struct MyApp: App {
             if view3 ==  true{
                 ContentView()
             }
-            HStack{
+            VStack{
                 Button {
                     view1 = true
                     view2 = false
@@ -28,7 +28,14 @@ struct MyApp: App {
                     animated2 = false
                     animated3 = false
                 } label: {
+                    
                     Image(systemName: animated1 ? "book.fill" : "book")
+                        .frame(width: 300, height: 100)
+                        .background(.mint)
+                    .clipShape(RoundedRectangle(cornerSize: CGSize(width: 30, height: 10), style: .continuous))
+//                        .background(.green)
+                        .padding()
+                    
                 }
                 
                 Button {
@@ -40,6 +47,7 @@ struct MyApp: App {
                     animated3 = false
                 } label: {
                     Image(systemName: animated2 ? "character.book.closed.fill.ja" : "character.book.closed.ja")
+                        .padding()
                 }
                 
                 Button {
@@ -51,6 +59,7 @@ struct MyApp: App {
                     animated3 = true
                 } label: {
                     Image(systemName: animated3 ? "text.book.closed.fill" : "text.book.closed")
+                        .padding()
                 }
             }
         }
