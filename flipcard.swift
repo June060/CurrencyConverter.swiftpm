@@ -10,6 +10,8 @@ import SwiftUI
 
 struct flipcard: View {
     
+    @State var term1:String
+    @State var definition1: String
     @State var flipped = false // state variable used to update the card
     
     var body: some View {
@@ -25,18 +27,23 @@ struct flipcard: View {
                     self.flipped.toggle()
                     //}
                 }
-            Text(flipped ? "Hi" : "Bye")
+            Text(flipped ? term1 : definition1 )
                 .rotation3DEffect(self.flipped ? Angle(degrees: 0): Angle(degrees: 0), axis: (x: CGFloat(0), y: CGFloat(10), z: CGFloat(0)))
                 .animation(.default)
                 .onTapGesture {
                     self.flipped.toggle()
                 }
         }
+        .onAppear(perform: {
+            term1 = UserDefaults.standard.string(forKey: "term")!
+            definition1 = UserDefaults.standard.string(forKey: "definition")!
+            
+        })
     }
 }
 
 struct ExampleCard_Previews: PreviewProvider {
     static var previews: some View {
-        flipcard()
+        flipcard(term1: "", definition1: "")
     }
 }

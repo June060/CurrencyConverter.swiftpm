@@ -19,49 +19,59 @@ struct MyApp: App {
             if view3 ==  true{
                 ContentView()
             }
-            VStack{
-                Button {
-                    view1 = true
-                    view2 = false
-                    view3 = false
-                    animated1 = true
-                    animated2 = false
-                    animated3 = false
-                } label: {
+            
+            HStack{
+                Group{
+                    Button {
+                        view1 = true
+                        view2 = false
+                        view3 = false
+                        animated1 = true
+                        animated2 = false
+                        animated3 = false
+                    } label: {
+                        
+                        Image(systemName: animated1 ? "book.fill" : "book")
+                            .frame(width: 100, height: 100)
+                            .background(.mint)
+                            .clipShape(RoundedRectangle(cornerSize: CGSize(width: 30, height: 10), style: .continuous))
+                            .padding()
+                        
+                    }
                     
-                    Image(systemName: animated1 ? "book.fill" : "book")
-                        .frame(width: 300, height: 100)
-                        .background(.mint)
-                    .clipShape(RoundedRectangle(cornerSize: CGSize(width: 30, height: 10), style: .continuous))
-//                        .background(.green)
-                        .padding()
+                    Button {
+                        view1 = false
+                        view2 = true
+                        view3 = false
+                        animated1 = false
+                        animated2 = true
+                        animated3 = false
+                    } label: {
+                        Image(systemName: animated2 ? "character.book.closed.fill.ja" : "character.book.closed.ja")
+                            .frame(width: 100, height: 100)
+                            .background(.mint)
+                            .clipShape(RoundedRectangle(cornerSize: CGSize(width: 30, height: 10), style: .continuous))
+                            .padding()
+                    }
                     
+                    Button {
+                        view1 = false
+                        view2 = false
+                        view3 = true
+                        animated1 = false
+                        animated2 = false
+                        animated3 = true
+                    } label: {
+                        Image(systemName: animated3 ? "text.book.closed.fill" : "text.book.closed")
+                            .frame(width: 100, height: 100)
+                            .background(.mint)
+                            .clipShape(RoundedRectangle(cornerSize: CGSize(width: 30, height: 10), style: .continuous))
+                            .padding()
+                    }
                 }
-                
-                Button {
-                    view1 = false
-                    view2 = true
-                    view3 = false
-                    animated1 = false
-                    animated2 = true
-                    animated3 = false
-                } label: {
-                    Image(systemName: animated2 ? "character.book.closed.fill.ja" : "character.book.closed.ja")
-                        .padding()
-                }
-                
-                Button {
-                    view1 = false
-                    view2 = false
-                    view3 = true
-                    animated1 = false
-                    animated2 = false
-                    animated3 = true
-                } label: {
-                    Image(systemName: animated3 ? "text.book.closed.fill" : "text.book.closed")
-                        .padding()
-                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
             }
+            
         }
     }
 }
