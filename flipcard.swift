@@ -35,12 +35,20 @@ struct flipcard: View {
                 }
         }
         .onAppear(perform: {
-            term1 = UserDefaults.standard.string(forKey: "term")!
-            definition1 = UserDefaults.standard.string(forKey: "definition")!
+            term1 = UserDefaults.standard.string(forKey: "term") ?? ""
+            definition1 = UserDefaults.standard.string(forKey: "definition") ?? ""
+        }) 
             
-        })
+        
+            
+//            term1 = UserDefaults.standard.string(forKey: "term") ?? ""
+//            definition1 = UserDefaults.standard.string(forKey: "definition") ?? ""
+            
+                
+            
+            
+        }
     }
-}
 
 struct ExampleCard_Previews: PreviewProvider {
     static var previews: some View {
