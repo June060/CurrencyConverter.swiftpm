@@ -1,8 +1,9 @@
 import SwiftUI
 
 struct setCreator: View {
-    @State var term1:String
-    @State var definition1:String
+    @State var term1:String = ""
+    @State var definition1:String = ""
+    @State var pair:[pairs] = [pairs(term2: "", definition2: "")]
     var body: some View {
         VStack{
             Group{
@@ -12,6 +13,8 @@ struct setCreator: View {
             .textFieldStyle(.roundedBorder)
             .padding()
             .onSubmit {
+                pair.append(pairs(term2: term1, definition2: definition1))
+
                 UserDefaults.standard.set(term1, forKey: "term")
                 UserDefaults.standard.set(definition1, forKey: "definition")
                 term1 = UserDefaults.standard.string(forKey: "term") ?? ""
@@ -19,12 +22,13 @@ struct setCreator: View {
             }
             Button(action: {
                 
-                
+                pair.append(pairs(term2: term1, definition2: definition1))
+
                 UserDefaults.standard.set(term1, forKey: "term")
                 UserDefaults.standard.set(definition1, forKey: "definition")
                 term1 = UserDefaults.standard.string(forKey: "term") ?? ""
                 definition1 = UserDefaults.standard.string(forKey: "definition") ?? ""
-            }, label: {
+                            }, label: {
                 Image(systemName: "plus.circle")
             })
             
