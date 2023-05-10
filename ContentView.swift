@@ -1,6 +1,5 @@
 import SwiftUI
 
-
 struct ContentView: View {
     @State var picker:Bool = false
     var body: some View {
