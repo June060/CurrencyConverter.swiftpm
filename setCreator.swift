@@ -15,6 +15,8 @@ struct setCreator: View {
             .onSubmit {
                 pair.append(pairs(term2: term1, definition2: definition1))
 
+                UserDefaults.standard.set(pair, forKey: "pair")
+                
                 UserDefaults.standard.set(term1, forKey: "term")
                 UserDefaults.standard.set(definition1, forKey: "definition")
                 term1 = UserDefaults.standard.string(forKey: "term") ?? ""
