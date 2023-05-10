@@ -16,14 +16,16 @@ struct ContentView: View {
                         .clipShape(RoundedRectangle(cornerSize: CGSize(width: 30, height: 10), style: .continuous))
                         .padding()
                 }
-                Button(action: {
-                    picker = true
-                        
-                }, label: {
-                    /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-                })
+//                colorPicker()
+//                Button(action: {
+//                    picker = true
+//
+//                }, label: {
+//                    /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
+//                })
             }
         }
+        .navigationViewStyle(.stack)
         
     }
 }
