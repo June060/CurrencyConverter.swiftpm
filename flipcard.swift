@@ -12,15 +12,16 @@ struct flipcard: View {
     
     @State var term1:String
     @State var definition1: String
+    @State var frontCardColor = Color.red
+    @State var backCardColor = Color.blue
     @State var flipped = false // state variable used to update the card
-    @Binding var flashcardcolor1:Color
-    @State var flashcardColorDefault:Color = .red
+
 
     
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 20)
-                .foregroundColor(self.flipped ? flashcardcolor1 : .blue) // change the card color when flipped
+                .foregroundColor(self.flipped ? .red : .blue) // change the card color when flipped
                 .padding()
                 .rotation3DEffect(self.flipped ? Angle(degrees: 180): Angle(degrees: 0), axis: (x: CGFloat(0), y: CGFloat(10), z: CGFloat(0)))
                 .animation(.default)

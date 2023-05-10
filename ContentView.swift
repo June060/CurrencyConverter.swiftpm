@@ -7,21 +7,14 @@ struct ContentView: View {
             VStack{
                 Text("Study Buddy")
                 NavigationLink {
-                    TestView()
+                    TestView(term1: "", definition1: "")
                 } label: {
-                    Text("Go to test view")
-                        .frame(width: 70, height: 70)
+                    Text("Make a Set")
+                        .frame(width: 100, height: 100)
                         .background(.mint)
-                        .clipShape(RoundedRectangle(cornerSize: CGSize(width: 30, height: 10), style: .continuous))
+                        .clipShape(RoundedRectangle(cornerSize: CGSize(width: 20, height: 20), style: .continuous))
                         .padding()
                 }
-//                colorPicker()
-//                Button(action: {
-//                    picker = true
-//
-//                }, label: {
-//                    /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-//                })
             }
         }
         .navigationViewStyle(.stack)

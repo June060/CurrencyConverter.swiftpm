@@ -6,6 +6,11 @@ struct setCreator: View {
     @State var pair:[pairs] = [pairs(term2: "", definition2: "")]
     var body: some View {
         VStack{
+            Text("Your Terms")
+            HStack{
+                Text("\(term1)")
+                Text("\(definition1)")
+            }
             Group{
                 TextField("Enter your term", text: $term1)
                 TextField("Enter the definition for your term",text: $definition1)
@@ -34,6 +39,11 @@ struct setCreator: View {
                 Image(systemName: "plus.circle")
             })
             
+            
         }
+        .onAppear(perform: {
+            term1 = UserDefaults.standard.string(forKey: "term") ?? ""
+            definition1 = UserDefaults.standard.string(forKey: "definition") ?? ""
+        }) 
     }
 }
