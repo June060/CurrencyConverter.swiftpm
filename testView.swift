@@ -12,7 +12,7 @@ struct TestView: View {
     
     var body: some View {
         VStack{
-            flipcard(term1: "", definition1: "", flipped: false)
+            flipcard(flipped: false)
                 .frame(width: 300, height: 200)
             setCreator()
             

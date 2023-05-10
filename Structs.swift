@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct pairs {
+struct pairs:Hashable, Encodable, Decodable {
     var term2:String
     var definition2:String
 }

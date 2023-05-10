@@ -15,12 +15,7 @@ struct ContentView: View {
                         .clipShape(RoundedRectangle(cornerSize: CGSize(width: 30, height: 10), style: .continuous))
                         .padding()
                 }
-                Button(action: {
-                    picker = true
-                        
-                }, label: {
-                    Text("Button")
-                })
+                
             }
         }
         
